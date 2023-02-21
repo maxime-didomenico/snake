@@ -102,6 +102,11 @@ def game_over():
                         if (event.unicode >= 'a' and event.unicode <= 'z') or (event.unicode >= 'A' and event.unicode <= 'Z'):
                             letter = event.unicode
                             new_name.append(letter)
+                        elif event.key == pygame.K_BACKSPACE:
+                            if len(new_name) > 0:
+                                new_name = new_name[:-1]
+                            else:
+                                pass
             if pygame.mouse.get_pressed() == (1, 0, 0) and (x > 230 and y > 70 and x < 390 and y < 300) or (event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN):
                         print_text = 1
                         if new_name != []:
